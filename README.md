@@ -110,7 +110,7 @@ Mets à jour l'intégralité du site web existant pour qu'il corresponde à ma v
 Identité officielle de l'entreprise
 Nom commercial : TClean
 
-Téléphone : 06 77 69 50 79
+Téléphone : 07 44 88 11 70
 
 Zone principale : Strasbourg, France
 
@@ -125,7 +125,7 @@ Utilise systématiquement le nom TClean sur le site : logo, en-tête, pied de pa
 Ne conserve aucun nom d'entreprise fictif ou générique provenant des précédents contenus de démonstration.
 
 Coordonnées et boutons d'appel
-Afficher le numéro 06 77 69 50 79 dans les emplacements pertinents :
+Afficher le numéro 07 44 88 11 70 dans les emplacements pertinents :
 
 En-tête du site.
 
@@ -205,7 +205,7 @@ Boutons principaux :
 
 « Obtenir mon devis gratuit »
 
-« Appeler le 06 77 69 50 79 »
+« Appeler le 07 44 88 11 70 »
 
 Ajouter une section mettant en avant :
 
@@ -264,7 +264,7 @@ Centraliser les informations commerciales dans un espace de configuration :
 
 Nom : TClean.
 
-Téléphone : 06 77 69 50 79.
+Téléphone : 07 44 88 11 70.
 
 Ville de référence : Strasbourg.
 
