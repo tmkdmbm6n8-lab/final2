@@ -11,7 +11,6 @@ import { ACCOUNT_DISCOUNT, PROFILE_DISCOUNT, applyDiscount, totalPercent } from 
 import { supabase } from "@/integrations/supabase/client";
 import { paymentsConfigured } from "@/lib/stripe";
 import { geocodeAddress, haversineKm } from "@/lib/configurator";
-import { RequestCheckout } from "./checkout";
 import {
   FREE_RADIUS_KM,
   armLabels,
@@ -449,16 +448,6 @@ export function Configurator() {
       <div className="notice">
         Le configurateur sera disponible dès que TClean aura activé ses prestations.{" "}
         <a href={`tel:${telephone(c)}`}>Appelez le {c.phone}</a>.
-      </div>
-    );
-  if (id && payId)
-    return (
-      <div className="form-panel">
-        <h2>Réglez votre réservation</h2>
-        <p>
-          Votre date est bloquée. Montant : <strong>{priceText}</strong>
-        </p>
-        <RequestCheckout requestId={payId} />
       </div>
     );
   if (id)

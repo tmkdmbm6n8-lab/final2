@@ -29,10 +29,8 @@ import { Route as SavRouteImport } from './routes/sav'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as ZoneInterventionRouteImport } from './routes/zone-intervention'
-import { Route as PaiementRetourRouteImport } from './routes/paiement/retour'
 import { Route as PrestationsIndexRouteImport } from './routes/prestations.index'
 import { Route as PrestationsSlugRouteImport } from './routes/prestations.$slug'
-import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 import { Route as ApiPublicSiteImageFileRouteImport } from './routes/api/public/site-image/$file'
 
 const IndexRoute = IndexRouteImport.update({
@@ -135,11 +133,6 @@ const ZoneInterventionRoute = ZoneInterventionRouteImport.update({
   path: '/zone-intervention',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PaiementRetourRoute = PaiementRetourRouteImport.update({
-  id: '/paiement/retour',
-  path: '/paiement/retour',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrestationsIndexRoute = PrestationsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -150,12 +143,6 @@ const PrestationsSlugRoute = PrestationsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PrestationsRoute,
 } as any)
-const ApiPublicPaymentsWebhookRoute =
-  ApiPublicPaymentsWebhookRouteImport.update({
-    id: '/api/public/payments/webhook',
-    path: '/api/public/payments/webhook',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ApiPublicSiteImageFileRoute = ApiPublicSiteImageFileRouteImport.update({
   id: '/api/public/site-image/$file',
   path: '/api/public/site-image/$file',
@@ -183,10 +170,8 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tarifs': typeof TarifsRoute
   '/zone-intervention': typeof ZoneInterventionRoute
-  '/paiement/retour': typeof PaiementRetourRoute
   '/prestations/$slug': typeof PrestationsSlugRoute
   '/prestations/': typeof PrestationsIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/api/public/site-image/$file': typeof ApiPublicSiteImageFileRoute
 }
 export interface FileRoutesByTo {
@@ -209,10 +194,8 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tarifs': typeof TarifsRoute
   '/zone-intervention': typeof ZoneInterventionRoute
-  '/paiement/retour': typeof PaiementRetourRoute
   '/prestations/$slug': typeof PrestationsSlugRoute
   '/prestations': typeof PrestationsIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/api/public/site-image/$file': typeof ApiPublicSiteImageFileRoute
 }
 export interface FileRoutesById {
@@ -237,10 +220,8 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/tarifs': typeof TarifsRoute
   '/zone-intervention': typeof ZoneInterventionRoute
-  '/paiement/retour': typeof PaiementRetourRoute
   '/prestations/$slug': typeof PrestationsSlugRoute
   '/prestations/': typeof PrestationsIndexRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
   '/api/public/site-image/$file': typeof ApiPublicSiteImageFileRoute
 }
 export interface FileRouteTypes {
@@ -266,10 +247,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/tarifs'
     | '/zone-intervention'
-    | '/paiement/retour'
     | '/prestations/$slug'
     | '/prestations/'
-    | '/api/public/payments/webhook'
     | '/api/public/site-image/$file'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -292,10 +271,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/tarifs'
     | '/zone-intervention'
-    | '/paiement/retour'
     | '/prestations/$slug'
     | '/prestations'
-    | '/api/public/payments/webhook'
     | '/api/public/site-image/$file'
   id:
     | '__root__'
@@ -319,10 +296,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/tarifs'
     | '/zone-intervention'
-    | '/paiement/retour'
     | '/prestations/$slug'
     | '/prestations/'
-    | '/api/public/payments/webhook'
     | '/api/public/site-image/$file'
   fileRoutesById: FileRoutesById
 }
@@ -347,8 +322,6 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TarifsRoute: typeof TarifsRoute
   ZoneInterventionRoute: typeof ZoneInterventionRoute
-  PaiementRetourRoute: typeof PaiementRetourRoute
-  ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
   ApiPublicSiteImageFileRoute: typeof ApiPublicSiteImageFileRoute
 }
 
@@ -494,13 +467,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZoneInterventionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/paiement/retour': {
-      id: '/paiement/retour'
-      path: '/paiement/retour'
-      fullPath: '/paiement/retour'
-      preLoaderRoute: typeof PaiementRetourRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/prestations/': {
       id: '/prestations/'
       path: '/'
@@ -514,13 +480,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/prestations/$slug'
       preLoaderRoute: typeof PrestationsSlugRouteImport
       parentRoute: typeof PrestationsRoute
-    }
-    '/api/public/payments/webhook': {
-      id: '/api/public/payments/webhook'
-      path: '/api/public/payments/webhook'
-      fullPath: '/api/public/payments/webhook'
-      preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
-      parentRoute: typeof rootRouteImport
     }
     '/api/public/site-image/$file': {
       id: '/api/public/site-image/$file'
@@ -567,8 +526,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TarifsRoute: TarifsRoute,
   ZoneInterventionRoute: ZoneInterventionRoute,
-  PaiementRetourRoute: PaiementRetourRoute,
-  ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
   ApiPublicSiteImageFileRoute: ApiPublicSiteImageFileRoute,
 }
 export const routeTree = rootRouteImport

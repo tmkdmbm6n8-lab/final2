@@ -3,8 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: () => {
-        const origin = "https://tclean-nettoyage.fr";
+      GET: ({ request }) => {
+        const origin = new URL(request.url).origin;
         const now = new Date().toISOString().split("T")[0];
 
         const pages: Array<{ path: string; priority: string; changefreq: string }> = [

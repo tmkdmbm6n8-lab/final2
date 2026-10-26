@@ -21,8 +21,6 @@ export const Route = createFileRoute("/")({
       "@type": "HomeAndConstructionBusiness",
       name: loaderData.name,
       legalName: loaderData.name,
-      url: "https://tclean-nettoyage.fr/",
-      logo: "https://tclean-nettoyage.fr/favicon.png",
       telephone: loaderData.phone,
       description:
         "Nettoyage professionnel de canapés, fauteuils, chaises et matelas à domicile à Strasbourg et dans le Bas-Rhin par injection-extraction.",

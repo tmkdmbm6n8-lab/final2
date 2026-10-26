@@ -1,1 +1,0 @@
-ALTER TABLE public.request_messages ADD COLUMN IF NOT EXISTS hidden_for_client boolean NOT NULL DEFAULT false;

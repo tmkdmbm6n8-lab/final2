@@ -17,4 +17,3 @@ Disallow: /compte
 Disallow: /paiement/
 Disallow: /_serverFn/
 
-Sitemap: https://tclean-nettoyage.fr/sitemap.xml

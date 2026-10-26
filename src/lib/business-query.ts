@@ -37,8 +37,6 @@ export const businessQuery = queryOptions({
   staleTime: 0,
 });
 
-const CANONICAL_SITE_ORIGIN = "https://tclean-nettoyage.fr";
-
 export function pageHead(config: BusinessConfig, title: string, description: string, path: string, noindex = false) {
   const personalize = (value: string) =>
     value
@@ -49,7 +47,6 @@ export function pageHead(config: BusinessConfig, title: string, description: str
   const cleanTitle = personalize(title);
   const cleanDescription = personalize(description);
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  const canonicalUrl = `${CANONICAL_SITE_ORIGIN}${normalizedPath === "/" ? "/" : normalizedPath.replace(/\/$/, "")}`;
 
   return {
     meta: [
@@ -58,7 +55,6 @@ export function pageHead(config: BusinessConfig, title: string, description: str
       { property: "og:title", content: `${cleanTitle} | ${config.name}` },
       { property: "og:description", content: cleanDescription },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: canonicalUrl },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: `${cleanTitle} | ${config.name}` },
@@ -68,6 +64,5 @@ export function pageHead(config: BusinessConfig, title: string, description: str
         : []),
       ...(noindex ? [{ name: "robots", content: "noindex,nofollow" }] : [{ name: "robots", content: "index,follow" }]),
     ],
-    links: [{ rel: "canonical", href: canonicalUrl }],
   };
 }

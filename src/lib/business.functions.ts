@@ -300,7 +300,7 @@ function renderClientConfirmationHtml(details: BookingAlertPayload): string {
     <tr>
       <td style="background-color:#f9fafb;border-top:1px solid #e5e7eb;padding:20px;text-align:center;font-size:12px;color:#6b7280;line-height:1.5;">
         <strong style="color:#111827;">TClean</strong> • Nettoyage professionnel de canapés, matelas et mobilier textile à domicile<br />
-        Strasbourg & Eurométropole • <a href="https://tclean-nettoyage.fr" style="color:#2d6a4f;text-decoration:none;font-weight:600;">tclean-nettoyage.fr</a>
+        Strasbourg & Eurométropole
       </td>
     </tr>
   </table>
@@ -680,7 +680,6 @@ async function sendClientBookingConfirmation(details: BookingAlertPayload) {
     "À très bientôt,",
     "L'équipe TClean - Nettoyage professionnel de mobilier à domicile",
     "Téléphone : 06 77 69 50 79",
-    "Site web : https://tclean-nettoyage.fr",
   ];
 
   const text = lines.filter((l) => l !== "").join("\n");
@@ -2028,7 +2027,7 @@ export const askPublicTcleanBot = createServerFn({ method: "POST" })
     const answer = await botChatReply({
       question: data.question,
       customerName: "Visiteur du site",
-      context: historyText || "Discussion en direct sur la page d'accueil de tclean-nettoyage.fr",
+      context: historyText || "Discussion en direct sur la page d'accueil du site",
     });
     return { answer };
   });

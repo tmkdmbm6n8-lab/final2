@@ -4,6 +4,9 @@ import { MessageSquare, X, Send, Sparkles, Phone, ArrowUpRight } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { askPublicTcleanBot } from "@/lib/business.functions";
 import botAvatar from "@/assets/tclean-bot.png";
+import botBody from "@/assets/bot-body.png";
+import botSpray from "@/assets/bot-spray.png";
+import botSponge from "@/assets/bot-sponge.png";
 
 type Message = { role: "bot" | "user"; text: string };
 
@@ -319,12 +322,16 @@ export function BotWidget() {
         className="group relative flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 opacity-80 hover:opacity-100"
         aria-label="Discuter avec l'assistant TClean"
       >
-        <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary bg-primary/10 shadow-lg">
-          <img
-            src={botAvatar}
-            alt="TClean Assistant"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-          />
+        <div className="bot-cage relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary bg-primary/10 shadow-lg">
+          <span className="bot-cage-shine" aria-hidden="true" />
+          <img src={botBody} alt="TClean Assistant" className="bot-body" />
+          <img src={botSpray} alt="" aria-hidden="true" className="bot-spray" />
+          <span className="bot-mist bot-mist-1" aria-hidden="true" />
+          <span className="bot-mist bot-mist-2" aria-hidden="true" />
+          <span className="bot-mist bot-mist-3" aria-hidden="true" />
+          <img src={botSponge} alt="" aria-hidden="true" className="bot-sponge" />
+          <span className="bot-bubble bot-bubble-1" aria-hidden="true" />
+          <span className="bot-bubble bot-bubble-2" aria-hidden="true" />
         </div>
         <span className="absolute -top-1 -right-1 flex h-4 w-4">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
